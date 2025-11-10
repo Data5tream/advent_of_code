@@ -12,7 +12,7 @@ fn load_file() {
     for line in data.split('\n') {
         let parts: Vec<&str> = line.split_whitespace().collect();
         // skip on empty lines
-        if parts.len() == 0 {
+        if parts.is_empty() {
             continue;
         }
 
