@@ -2,6 +2,7 @@ use clap::{Command, arg, builder::styling, value_parser};
 
 mod day_1;
 mod day_2;
+mod day_3;
 
 pub fn run() -> Result<(), ()> {
     let matches = construct_command().get_matches();
@@ -12,6 +13,7 @@ pub fn run() -> Result<(), ()> {
         None => unimplemented!(),
         Some(1) => day_1::run(),
         Some(2) => day_2::run(),
+        Some(3) => day_3::run(),
         Some(day) => {
             eprintln!("Puzzle {day} is not solved yet");
             Err(())
