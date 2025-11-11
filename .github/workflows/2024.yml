@@ -1,0 +1,22 @@
+name: "2024"
+
+on:
+  push:
+    paths:
+      - 2024/**
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./2024
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test --verbose
